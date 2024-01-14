@@ -3,15 +3,9 @@ describe('Search elements',()=>{
         cy.visit('products');
     })
     it('Search for elements with multiple results', ()=>{
-        cy.fixture('index').then((index)=>{
-            cy.get(index.searchBox).type('dress');
-            cy.get(index.searchButton).click();
-        })
+        cy.search('dress')
     }) 
     it('Search for elements with no results', ()=>{
-        cy.fixture('index').then((index)=>{
-            cy.get(index.searchBox).type('qwerty');
-            cy.get(index.searchButton).click();
-        })
+        cy.search('qwerty')
     }) 
 })
